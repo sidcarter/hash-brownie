@@ -3,13 +3,13 @@ Message hasher (aka Hash Brownie)
 
 A simple docker image which servers the SHA256 hash of any message and returns the original message when requested for.
 
-# Build/Run Requirements
+# Build/Run Specs
 
 * This docker image uses Python 3.6 (Alpine) and Redis 3.2.8 (Alpine), also tested with Python 2.7
-* The container is set to restart on-failure
+* The container is set to restart in case of any crashes etc.,
 * By default, we have a max log file size of 100k and ensure we only keep 5 log files
 
-# Docker versions tested on
+## Docker versions tested on
 ```
 $ docker --version
 Docker version 17.03.1-ce, build c6d412e

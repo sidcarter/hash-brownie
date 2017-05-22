@@ -1,13 +1,14 @@
 version: '3'
 services:
   hash-brownie:
-    restart: on-failure
+    restart: always
     build: .
     ports:
       - "443:4000"
     volumes:
       - .:/www
     logging:
+      driver: "json-file"
       options:
         max-size: "100k"
         max-file: "5"
