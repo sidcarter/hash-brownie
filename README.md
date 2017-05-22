@@ -19,14 +19,14 @@ docker-compose version 1.11.2, build dfed245
 
 # HOWTO
 
-## To POST a message
+## POST a message
 ```
 $ curl -X POST -H "Content-Type: application/json" -d '{"message": "number"}'  --cacert localhost.crt https://localhost/messages
 {
   "digest": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
 }
 ```
-## To GET a message
+## GET a message
 ```
 $ curl --cacert localhost.crt https://localhost/messages/12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8
 {
