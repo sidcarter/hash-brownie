@@ -21,18 +21,13 @@ docker-compose version 1.11.2, build dfed245
 For testing purposes, you might want to create a self-signed cert or use the included cert.
 
 ## Creating a self-signed certificate
-You can get the instructions
+You can follow the instructions from 
 [here](https://www.linux.com/learn/creating-self-signed-ssl-certificates-apache-linux
-"Self-Signed Certificates")
-
-Short set of instructions:
+"Self-Signed Certificates") or use the following set of instructions:
 
 * openssl req -new > localhost.ssl.csr
 * openssl rsa -in privkey.pem -out localhost.key
 * openssl x509 -in new.cert.csr -out new.cert.cert -req -signkey new.cert.key -days NNN
 
 # For Scaling
-
-
-
 
