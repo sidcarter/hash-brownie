@@ -1,5 +1,5 @@
-Message hasher
-==============
+Message hasher (aka Hash Brownie)
+=================================
 
 A simple docker image which servers the SHA256 hash of any message and returns the original message when requested for.
 
