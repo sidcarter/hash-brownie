@@ -6,7 +6,8 @@ A simple docker image which servers the SHA256 hash of any message and returns t
 # Build/Run Requirements
 
 * This docker image uses Python 3.6 (Alpine) and Redis 3.2.8 (Alpine), also tested with Python 2.7
-* The container restarts on-failure
+* The container is set to restart on-failure
+* By default, we have a max log file size of 100k and ensure we only keep 5 log files
 
 # Docker versions tested on
 ```
