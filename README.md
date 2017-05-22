@@ -3,7 +3,7 @@ Message hasher (aka Hash Brownie)
 
 A simple docker image which servers the SHA256 hash of any message and returns the original message when requested for.
 
-# Build/Run Specs
+# Build specs and defaults
 
 * This docker image uses Python 3.6 (Alpine) and Redis 3.2.8 (Alpine), also tested with Python 2.7
 * The container is set to restart in case of any crashes etc.,
@@ -15,6 +15,23 @@ $ docker --version
 Docker version 17.03.1-ce, build c6d412e
 $ docker-compose --version
 docker-compose version 1.11.2, build dfed245
+```
+
+# HOWTO
+
+## To POST a message
+```
+$ curl -X POST -H "Content-Type: application/json" -d '{"message": "number"}'  --cacert localhost.crt https://localhost/messages
+{
+  "digest": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
+}
+```
+## To GET a message
+```
+$ curl --cacert localhost.crt https://localhost/messages/12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8
+{
+  "message": "number"
+}
 ```
 
 # SSL Certificate
