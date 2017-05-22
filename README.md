@@ -30,4 +30,11 @@ You can follow the instructions from
 * openssl x509 -in new.cert.csr -out new.cert.cert -req -signkey new.cert.key -days NNN
 
 # For Scaling
+This is a simple app and the key software is Redis. There are many ways to scale Redis, depending on the use case.
+
+In the simplest case, the app can be memory bound, and the easiest way to scale would be to scale up (vertically) using an instance with higher memory. Adding more CPUs may not help, since Redis is single threaded. 
+
+For the use-case where the app is read heavy, you can scale out horizontally by adding read-replicas of the same data.
+In cases where the app is write heavy, adding master replicas can help. Of course, in this cause, read consistency is not guaranteed.
+In cases where the data is complex, sharding or partitioning can help scale too.
 
