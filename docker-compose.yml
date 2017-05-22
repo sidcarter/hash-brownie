@@ -1,0 +1,19 @@
+version: '3'
+services:
+  messhash:
+    restart: on-failure
+    build: .
+    ports:
+      - "443:4000"
+    volumes:
+      - .:/www
+    logging:
+      options:
+        max-size: "100k"
+        max-file: "5"
+    deploy:
+     restart_policy:
+       condition: on-failure
+
+  redis:
+    image: "redis:3.2.8-alpine"
